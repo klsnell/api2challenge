@@ -2,9 +2,9 @@ const baseURL = "api.giphy.com/v1/gifs/search";
 const key="fV2mC8isuwHuVzkpctcfX2OMWY3p8UgV";
 
 const fetchGif = async(event) => {
-    // event.preventDefault()
+    //  event.preventDefault()
     try{
-        const response = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${key}&rating=pg-13`);
+        const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${key}&rating=pg-13`);
         console.log(response);
 
         if(response.status === 404){
@@ -22,7 +22,8 @@ const fetchGif = async(event) => {
 }
 
 fetchGif();
-function displayResults(gif){
+function displayResults(gif, event){
+    // event.preventDefault();
     let gifPic = document.getElementById("pick");
     gifPic.src = gif;
 };
